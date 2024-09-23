@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-image: url( "{% static 'images/nreg.jpg' %}" );
+            background-repeat: no-repeat;       
+            background-size:contain;              
+        background-position: left; 
+        background-position: right; 
+        } */
+        body {
+    background-image: url("{% static 'images/nreg.jpg' %}"), url("{% static 'images/nreg.jpg' %}");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center; 
+    background-size: contain, contain;
+}
+
+    </style>
+
+</head>
+<body>
+    
+
+<h3 class="reghead">ENTER DETAILS</h3>
+
+
+<form action="{% url 'register' %}" method="post" class="form" >
+    {% csrf_token %} 
+    <label for="">Name</label> 
+    <br>
+    <input type="text" name="nm">
+    <br>
+    <label for="">Email</label>
+    <br>
+    <input type="email" name="em">
+    <br>
+    <label for="">Age</label>
+    <br>
+    <input type="number" name="age">
+    <br>
+    <label for="">Contact</label>
+    <br>
+    <input type="number" name="con">
+    <br>
+    <label for="">Password</label>
+    <br>
+    <input type="password" name="pass">
+    <br>
+    <button type="submit">Register</button>
+    <br>
+
+</form>
+
+</body>
+</html>

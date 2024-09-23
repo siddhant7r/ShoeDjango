@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        body{
+            background-image: url( "{% static 'images/nlogo.jpg' %}" );
+            background-repeat: no-repeat;       
+            background-size: cover;              
+        background-position: center;  
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="lwelcome">Welcome {{name}}</h1>
+
+    {{msg}}
+
+<div class="fdiv">
+
+    <form action="{% url 'login' %}" method="post" class="forml">
+        {% csrf_token %}
+
+            
+            <input type="email" name="email" id="formelements" placeholder="Enter Your Email"><br><br>
+            <input type="password" name="password" id="formelements" placeholder="Enter Your password"><br><br>
+            <button id="formbutton">Login</button>
+            <!-- <img src="{% static 'images/nlogo.jpg' %}" alt="" height="100px"> -->
+        </form>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+

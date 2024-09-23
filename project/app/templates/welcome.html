@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url( "{% static 'images/nlogoorange.jpg' %}" );
+            background-repeat: no-repeat;       
+            background-size: cover;              
+        /* background-position: center;   */
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="welcomediv">
+        <h1>Welcome {{name}} </h1>
+    <h2>You are Successfully Logged in</h2>
+    </div>
+
+    <div class="wellogout">
+        <a href="{% url 'delete' %}"> Logout</a>
+    </div>
+    
+
+
+</body>
+</html>
